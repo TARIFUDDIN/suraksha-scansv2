@@ -1,0 +1,17 @@
+
+plotly
+pandas
+numpy
+seaborn
+matplotlib
+tensorflow
+scikit-learn
+xgboost
+python-dotenv
+gunicorn
+pdfkit
+reportlab
+Flask
+streamlit
+dill
+-e .

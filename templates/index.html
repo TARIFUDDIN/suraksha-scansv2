@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suraksha-Scans</title>
+    <link rel="icon" href="./static/images/heart-pulse-solid.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        :root {
+            --primary: #16a085;
+            --black: #444;
+            --light-color: #777;
+            --box-shadow: .5rem .5rem 0 rgba(22, 160, 133, .2);
+            --text-shadow: .4rem .4rem 0 rgba(0, 0, 0, .2);
+            --border: .2rem solid var(--primary);
+            --gradient: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+        }
+
+        * {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            outline: none;
+            border: none;
+            text-transform: capitalize;
+            transition: all .2s ease-out;
+            text-decoration: none;
+        }
+
+        html {
+            font-size: 62.5%;
+            overflow-x: hidden;
+            scroll-padding-top: 7rem;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #121233;
+            color: #fff;
+        }
+
+        .header {
+            padding: 2rem 9%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #1c1c47;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            color: var(--primary);
+            font-weight: bolder;
+        }
+
+        .logo i {
+            color: var(--primary);
+        }
+
+        .heading {
+            text-align: center;
+            padding-bottom: 2rem;
+            text-shadow: var(--text-shadow);
+            text-transform: uppercase;
+            color: var(--black);
+            font-size: 5rem;
+            letter-spacing: .4rem;
+            color: #fff;
+            margin-top: 6rem;
+        }
+
+        .heading span {
+            text-transform: uppercase;
+            color: var(--primary);
+        }
+
+        section {
+            padding: 2rem 9%;
+        }
+
+        .scans-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+            margin-top: 3rem;
+        }
+
+        .scan-box {
+            flex: 1 1 30rem;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 2rem;
+            box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            padding: 3rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .scan-box:hover {
+            transform: translateY(-1rem);
+            box-shadow: 0 0 2rem rgba(22, 160, 133, 0.3);
+        }
+
+        .scan-box i {
+            color: var(--primary);
+            font-size: 5rem;
+            margin-bottom: 2rem;
+        }
+
+        .scan-box h3 {
+            color: #fff;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .scan-box p {
+            color: #ccc;
+            font-size: 1.5rem;
+            line-height: 2;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: .7rem 3rem;
+            border-radius: 5rem;
+            background: var(--gradient);
+            color: #fff;
+            cursor: pointer;
+            font-size: 1.7rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: scale(1.1);
+        }
+
+        .btn i {
+            color: #fff;
+            margin-left: .5rem;
+            font-size: 1.5rem;
+        }
+
+        .title-container {
+            text-align: center;
+            padding: 10rem 0 4rem 0;
+            background: linear-gradient(to right, #121233, #1b1b4d);
+        }
+
+        .main-title {
+            font-size: 6rem;
+            color: #fff;
+        }
+
+        .highlight {
+            color: var(--primary);
+        }
+
+        .scan-icon {
+            height: 8rem;
+            width: 8rem;
+            margin-bottom: 2rem;
+            fill: var(--primary);
+        }
+
+        @media (max-width: 991px) {
+            html {
+                font-size: 55%;
+            }
+            .heading {
+                font-size: 4rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .scans-container {
+                flex-direction: column;
+            }
+            .scan-box {
+                margin-bottom: 2rem;
+            }
+            .main-title {
+                font-size: 4rem;
+            }
+        }
+
+        @media (max-width: 450px) {
+            html {
+                font-size: 50%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="title-container">
+        <h1 class="main-title">SCANS & <span class="highlight">PREDICTIONS</span></h1>
+    </div>
+
+    <section>
+        <div class="scans-container">
+            <div class="scan-box">
+                <svg class="scan-icon" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M12,1A3,3,0,0,1,15,4V5H9V4A3,3,0,0,1,12,1M11,6H13V15H11V6M14,16H10v2H8V16a2,2,0,0,1,2-2h4a2,2,0,0,1,2,2v2H14V16M19.5,8.5A1,1,0,0,0,18.5,9.5,1,1,0,0,0,19.5,10.5,1,1,0,0,0,20.5,9.5,1,1,0,0,0,19.5,8.5M18.5,12a1,1,0,0,0-1,1,1,1,0,0,0,1,1,1,1,0,0,0,1-1,1,1,0,0,0-1-1M18.5,15.5a1,1,0,0,0-1,1,1,1,0,0,0,1,1,1,1,0,0,0,1-1,1,1,0,0,0-1-1M4.5,9.5A1,1,0,0,0,5.5,8.5,1,1,0,0,0,4.5,7.5,1,1,0,0,0,3.5,8.5,1,1,0,0,0,4.5,9.5M5.5,12a1,1,0,0,0-1-1,1,1,0,0,0-1,1,1,1,0,0,0,1,1,1,1,0,0,0,1-1M5.5,16.5a1,1,0,0,0-1-1,1,1,0,0,0-1,1,1,1,0,0,0,1,1,1,1,0,0,0,1-1M2,4A2,2,0,0,0,0,6v12a2,2,0,0,0,2,2H22a2,2,0,0,0,2-2V6a2,2,0,0,0-2-2H2Z"/>
+                </svg>
+                <h3>Disease Prediction</h3>
+                <p>Disease Prediction Using ML Involves Analyzing Medical Data To Forecast The Likelihood Of A Specific Ailment, Enabling Early Intervention.</p>
+                <a href="#" class="btn">Explore <i class="fas fa-chevron-right"></i></a>
+            </div>
+
+            <div class="scan-box">
+                <svg class="scan-icon" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M15.5,9.63C15.31,6.84 14.18,4.12 12.06,2.5C13.34,4.07 14.09,6.09 14.38,8.18C14.68,6.09 15.42,4.07 16.56,2.5C14.43,4.12 13.31,6.84 13.12,9.63C16.37,9.5 19.5,8.11 21.8,5.8C19.5,8.11 16.37,9.5 13.12,9.63C13.31,12.42 14.43,15.14 16.56,16.76C15.42,15.19 14.68,13.17 14.38,11.08C14.09,13.17 13.34,15.19 12.06,16.76C14.18,15.14 15.31,12.42 15.5,9.63M2,10A2,2 0 0,0 0,12A2,2 0 0,0 2,14H8A2,2 0 0,0 10,12A2,2 0 0,0 8,10H2Z"/>
+                </svg>
+                <h3>Lung Cancer</h3>
+                <p>Lung Cancer Is A Malignant Lung Tumor, Often Caused By Smoking. Symptoms Include Coughing, Chest Pain, And Difficulty Breathing.</p>
+                <a href="#" class="btn">Explore <i class="fas fa-chevron-right"></i></a>
+            </div>
+
+            <div class="scan-box">
+                <svg class="scan-icon" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M13,3V9H21V3M13,21H21V11H13M3,21H11V15H3M3,13H11V3H3V13Z"/>
+                </svg>
+                <h3>Brain Tumor</h3>
+                <p>Brain Tumors Are Abnormal Growths In The Brain. Symptoms Vary, And Treatment May Involve Surgery, Radiation, Or Chemotherapy.</p>
+                <a href="#" class="btn">Explore <i class="fas fa-chevron-right"></i></a>
+            </div>
+
+            <div class="scan-box">
+                <svg class="scan-icon" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M12,9A3,3 0 0,1 15,12A3,3 0 0,1 12,15A3,3 0 0,1 9,12A3,3 0 0,1 12,9M12,4.5C17,4.5 21.27,7.61 23,12C21.27,16.39 17,19.5 12,19.5C7,19.5 2.73,16.39 1,12C2.73,7.61 7,4.5 12,4.5M3.18,12C4.83,15.36 8.24,17.5 12,17.5C15.76,17.5 19.17,15.36 20.82,12C19.17,8.64 15.76,6.5 12,6.5C8.24,6.5 4.83,8.64 3.18,12Z"/>
+                </svg>
+                <h3>Cataract</h3>
+                <p>Cataract Is A Clouding Of The Eye's Lens, Causing Blurry Vision. Common With Aging, Surgery Replaces The Clouded Lens For Clarity.</p>
+                <a href="#" class="btn">Explore <i class="fas fa-chevron-right"></i></a>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
